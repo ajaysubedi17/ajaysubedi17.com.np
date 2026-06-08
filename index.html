@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajaya Subedi — Civil & Environmental Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --ink: #1a1a18;
+    --ink-soft: #5a5a54;
+    --ink-faint: #a0a098;
+    --accent: #2e5c3e;
+    --accent-light: #e8f0ea;
+    --rule: #dddbd4;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 4rem;
+    background: rgba(247,245,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    padding: 8rem 4rem 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--rule);
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.2s;
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.8rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    max-width: 38ch;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: #234830; transform: translateY(-1px); }
+
+  .btn-ghost {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  .hero-right {
+    padding: 8rem 4rem 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.45s;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .stat-item { border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .affil-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .affil-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .affil-list .dot {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .affil-list strong {
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    font-size: 0.85rem;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 4rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── ABOUT ── */
+  #about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  #about p {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 1.2rem;
+  }
+
+  #about p strong { color: var(--ink); font-weight: 500; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .skill-cell {
+    background: var(--bg);
+    padding: 1.4rem;
+  }
+
+  .skill-cell-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.6rem;
+  }
+
+  .skill-cell-value {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ── RESEARCH ── */
+  #research { background: var(--ink); color: #f7f5f0; }
+
+  #research .section-header h2 { color: #f7f5f0; }
+  #research .section-num { color: rgba(247,245,240,0.3); }
+
+  .papers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .paper-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(247,245,240,0.1);
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .paper-item:first-child { border-top: 1px solid rgba(247,245,240,0.1); }
+
+  .paper-year {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: rgba(247,245,240,0.35);
+    padding-top: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .paper-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #f7f5f0;
+    margin-bottom: 0.4rem;
+  }
+
+  .paper-journal {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+
+  .paper-badge {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(247,245,240,0.15);
+    color: rgba(247,245,240,0.4);
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 0.2rem;
+  }
+
+  .paper-badge.q1 {
+    border-color: var(--accent);
+    color: #7ab890;
+  }
+
+  /* ── TEACHING ── */
+  .teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .teaching-card {
+    background: var(--bg);
+    padding: 2.2rem;
+    transition: background 0.2s;
+  }
+
+  .teaching-card:hover { background: var(--accent-light); }
+
+  .teaching-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .teaching-inst {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .teaching-role {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  .teaching-desc {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ── EXPERIENCE ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .timeline-date {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    padding-top: 0.3rem;
+    line-height: 1.5;
+  }
+
+  .timeline-content-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .timeline-org {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--accent-light);
+  }
+
+  #contact .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  #contact p {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+
+  .contact-link:hover { color: var(--accent); }
+
+  .contact-link-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .contact-link-value {
+    font-size: 0.9rem;
+    color: inherit;
+  }
+
+  .contact-link-arrow { font-size: 0.8rem; color: var(--ink-faint); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.8rem; }
+    .nav-links { gap: 1.5rem; }
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left, .hero-right { padding: 5rem 1.8rem 3rem; border-right: none; }
+    .hero-right { border-top: 1px solid var(--rule); }
+    section { padding: 4rem 1.8rem; }
+    #about .about-grid, #contact .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .teaching-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#hero" class="nav-logo">Ajaya Subedi</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="hero-tag">Civil & Environmental Engineer</span>
+    <h1>Ajaya<br><em>Subedi</em></h1>
+    <p class="hero-desc">
+      Applying machine learning and intelligent modeling to solve complex environmental and civil engineering problems — from solid waste prediction to microplastic filtration.
+    </p>
+    <div class="hero-ctas">
+      <a href="#research" class="btn-primary">View Research</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="stat-number">11+</div>
+        <div class="stat-label">Publications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Q1</div>
+        <div class="stat-label">Journal Level</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Institutions</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6 yr</div>
+        <div class="stat-label">Field Experience</div>
+      </div>
+    </div>
+    <ul class="affil-list">
+      <li>
+        <span class="dot"></span>
+        <span><strong>Sr. Lecturer & Research Co-ordinator</strong>Hillside College of Engineering, Kathmandu</span>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <span><strong>Visiting Faculty & Thesis Supervisor</strong>MSc. Environmental Engineering, IOE Pulchowk Campus, TU</span>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <span><strong>Associate Editor</strong>Hillside Journal</span>
+      </li>
+      <li>
+        <span class="dot"></span>
+        <span><strong>NEC Registered Engineer</strong>NEC No. 26923 "A", Nepal</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2>About</h2>
+  </div>
+  <div class="about-grid">
+    <div class="reveal">
+      <p>I am a Civil and Environmental Engineer based in Kathmandu, Nepal, with an <strong>M.Sc. in Environmental Engineering (88.93%)</strong> from Tribhuvan University's Institute of Engineering, Pulchowk Campus.</p>
+      <p>My work sits at the intersection of environmental systems and artificial intelligence. I build and apply <strong>machine learning models</strong> to predict, optimize, and solve problems in solid waste management, water quality, wastewater treatment, and environmental impact — domains where data-driven approaches are still underutilised.</p>
+      <p>Beyond research, I believe in closing the gap between computational methods and engineering practice — through teaching, tutorials, and tools that make these approaches accessible to the next generation of engineers.</p>
+    </div>
+    <div class="reveal">
+      <div class="skills-grid">
+        <div class="skill-cell">
+          <div class="skill-cell-label">Research Focus</div>
+          <div class="skill-cell-value">ML in environmental engineering, solid waste, water systems, microplastics</div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cell-label">Tools & Languages</div>
+          <div class="skill-cell-value">Python, Machine Learning, EPANET, AutoCAD, Smart Road</div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cell-label">Education</div>
+          <div class="skill-cell-value">M.Sc. Environmental Eng., B.E. Civil Eng. — Tribhuvan University</div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cell-label">Location</div>
+          <div class="skill-cell-value">Kathmandu, Nepal</div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cell-label">Profiles</div>
+          <div class="skill-cell-value">Google Scholar · ResearchGate · LinkedIn</div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-cell-label">Registration</div>
+          <div class="skill-cell-value">NEC No. 26923 "A"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2>Research</h2>
+  </div>
+  <div class="papers-list">
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2024–2026</div>
+      <div>
+        <div class="paper-title">Machine Learning-based Prediction of Global Solid Waste Generation and Composition</div>
+        <div class="paper-journal">Scientific Reports</div>
+      </div>
+      <div class="paper-badge q1">Q1 · Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2024–2025</div>
+      <div>
+        <div class="paper-title">Towards Scalability: Fe-MOF-based Ultrafiltration Membrane for Effective Microplastics Removal from Drinking Water at Point-of-Use</div>
+        <div class="paper-journal">Global Challenges</div>
+      </div>
+      <div class="paper-badge q1">Q1 · Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2024–2025</div>
+      <div>
+        <div class="paper-title">Microplastic Contamination in the Pristine Waters of Tilicho Lake, Nepal: A Groundbreaking Study in the High-Altitude Himalayas</div>
+        <div class="paper-journal">iScience</div>
+      </div>
+      <div class="paper-badge q1">Q1 · Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2024–2025</div>
+      <div>
+        <div class="paper-title">Leveraging Machine Learning for Sustainable Solid Waste Management: A Global Perspective</div>
+        <div class="paper-journal">Sustainable Futures</div>
+      </div>
+      <div class="paper-badge q1">Q1 · Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2025</div>
+      <div>
+        <div class="paper-title">Riverbed Sand and Gravel Mining in Nepal: Environmental Impacts and Policy Pathways</div>
+        <div class="paper-journal">Environmental Development</div>
+      </div>
+      <div class="paper-badge q1">Q1 · Under Review</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2025</div>
+      <div>
+        <div class="paper-title">Application of Machine Learning for Prediction and Optimization of Biogas Production: A Mini Review</div>
+        <div class="paper-journal">H2Open Journal</div>
+      </div>
+      <div class="paper-badge">Submitted</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2025</div>
+      <div>
+        <div class="paper-title">Greenhouse Gas Estimation Methods for Domestic Wastewater in Nepal: A Mini Review</div>
+        <div class="paper-journal">International Journal of Environmental Studies (GENV)</div>
+      </div>
+      <div class="paper-badge">Q2 · Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2025</div>
+      <div>
+        <div class="paper-title">Metal-Organic Framework-Infused Membrane for Microplastic Filtration: A Batch Study for Scalable Approach</div>
+        <div class="paper-journal">ENG Transactions</div>
+      </div>
+      <div class="paper-badge">Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2025</div>
+      <div>
+        <div class="paper-title">Pyrolysis of the Plastics: Catalysts, Product Applications, and Techno-economic</div>
+        <div class="paper-journal">Natural Built Social Environment Health</div>
+      </div>
+      <div class="paper-badge">Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2025</div>
+      <div>
+        <div class="paper-title">Application of Machine Learning for Prediction of Solid Waste Generation</div>
+        <div class="paper-journal">Natural Built Social Environment Health</div>
+      </div>
+      <div class="paper-badge">Published</div>
+    </div>
+
+    <div class="paper-item reveal">
+      <div class="paper-year">2025</div>
+      <div>
+        <div class="paper-title">Compliance Status of Nepal National Building Code (NBC: 105) within Pokhara Metropolitan City</div>
+        <div class="paper-journal">Pokhara Engineering College Journal (PECJ)</div>
+      </div>
+      <div class="paper-badge">Published</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2>Teaching</h2>
+  </div>
+  <div class="teaching-grid reveal">
+    <div class="teaching-card">
+      <div class="teaching-icon">⚗️</div>
+      <div class="teaching-inst">IOE Pulchowk Campus · TU</div>
+      <div class="teaching-role">Applied ML in Environmental Engineering</div>
+      <div class="teaching-desc">Teaching and supervising thesis work at M.Sc. level — bridging machine learning methodologies with real environmental engineering problems.</div>
+    </div>
+    <div class="teaching-card">
+      <div class="teaching-icon">🌿</div>
+      <div class="teaching-inst">Hillside College of Engineering</div>
+      <div class="teaching-role">Environmental Engineering & Research</div>
+      <div class="teaching-desc">Senior Lecturer delivering environmental engineering courses while coordinating and supervising institutional research activities.</div>
+    </div>
+    <div class="teaching-card">
+      <div class="teaching-icon">💧</div>
+      <div class="teaching-inst">NCIT · Universal Engineering</div>
+      <div class="teaching-role">Water Resources & Environmental Eng.</div>
+      <div class="teaching-desc">Visiting faculty teaching water resources and environmental engineering subjects across multiple institutions in Lalitpur.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2>Experience</h2>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">May 2025 – Present</div>
+      <div class="timeline-content">
+        <div class="timeline-content-title">Research Co-ordinator & Sr. Lecturer</div>
+        <div class="timeline-org">Hillside College of Engineering</div>
+        <p>Leading research coordination and delivering lectures in Environmental Engineering subjects at bachelor's and master's level.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Aug 2025 – Present</div>
+      <div class="timeline-content">
+        <div class="timeline-content-title">Associate Editor, Editorial Board</div>
+        <div class="timeline-org">Hillside Journal</div>
+        <p>Reviewing and editing research submissions in civil and environmental engineering.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">May 2024 – May 2025</div>
+      <div class="timeline-content">
+        <div class="timeline-content-title">Academic Director</div>
+        <div class="timeline-org">SmartCAD Academy, Kathmandu</div>
+        <p>Managed and conducted professional workshops and training sessions to bridge the gap between academia and industry for engineers.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">May 2024 – May 2025</div>
+      <div class="timeline-content">
+        <div class="timeline-content-title">Domain Expert — Civil & Environmental Engineering</div>
+        <div class="timeline-org">Smart Tech Solution</div>
+        <p>Domain expert for developing infrastructure design software: Smart Road, Smart Water Supply, and Smart Estimation.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Nov 2019 – Jul 2023</div>
+      <div class="timeline-content">
+        <div class="timeline-content-title">Site Engineer / Quality Assurance</div>
+        <div class="timeline-org">DUDBC, Nepal Government</div>
+        <p>Supervision and quality assurance for the construction of the Federal Parliament Building Complex of Nepal, Singhdurbar, Kathmandu.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-header" style="margin-bottom:1.5rem">
+        <span class="section-num">05</span>
+        <h2>Contact</h2>
+      </div>
+      <p>Open to research collaborations, thesis supervision, speaking invitations, and discussions at the intersection of AI and environmental engineering.</p>
+      <a href="mailto:079msene003.ajaya@pcampus.edu.np" class="btn-primary">Send an Email</a>
+    </div>
+    <div class="contact-links reveal">
+      <a href="mailto:079msene003.ajaya@pcampus.edu.np" class="contact-link">
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-value">079msene003.ajaya@pcampus.edu.np</span>
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="tel:+9779846702714" class="contact-link">
+        <span class="contact-link-label">Phone</span>
+        <span class="contact-link-value">+977 984 670 2714</span>
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="#" class="contact-link">
+        <span class="contact-link-label">Google Scholar</span>
+        <span class="contact-link-value">View Publications</span>
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="#" class="contact-link">
+        <span class="contact-link-label">ResearchGate</span>
+        <span class="contact-link-value">View Profile</span>
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <a href="#" class="contact-link">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">Connect</span>
+        <span class="contact-link-arrow">↗</span>
+      </a>
+      <div class="contact-link" style="cursor:default">
+        <span class="contact-link-label">Location</span>
+        <span class="contact-link-value">Kathmandu, Nepal</span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Ajaya Subedi — Civil & Environmental Engineer</p>
+  <p>NEC No. 26923 "A" · Kathmandu, Nepal</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
