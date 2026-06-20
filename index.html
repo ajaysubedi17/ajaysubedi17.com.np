@@ -93,6 +93,17 @@
     animation: fadeUp 0.9s ease forwards 0.2s;
   }
 
+  .hero-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    padding: 3px;
+    margin-bottom: 1.6rem;
+    box-shadow: 0 4px 16px rgba(26,26,24,0.08);
+  }
+
   .hero-tag {
     font-family: var(--mono);
     font-size: 0.7rem;
@@ -115,11 +126,12 @@
 
   h1 {
     font-family: var(--serif);
-    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     font-weight: 300;
     line-height: 1.1;
     letter-spacing: -0.01em;
-    margin-bottom: 1.8rem;
+    white-space: nowrap;
+    margin-bottom: 0.8rem;
   }
 
   h1 em {
@@ -587,6 +599,7 @@
     #hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left, .hero-right { padding: 5rem 1.8rem 3rem; border-right: none; }
     .hero-right { border-top: 1px solid var(--rule); }
+    h1 { white-space: normal; font-size: clamp(2rem, 9vw, 2.8rem); }
     section { padding: 4rem 1.8rem; }
     #about .about-grid, #contact .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .teaching-grid { grid-template-columns: 1fr; }
@@ -613,8 +626,9 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
+    <img src="Profile.jpg" alt="Ajaya Subedi" class="hero-photo">
+    <h1>Ajaya Subedi</h1>
     <span class="hero-tag">Civil & Environmental Engineer</span>
-    <h1>Ajaya<br><em>Subedi</em></h1>
     <p class="hero-desc">
       Applying machine learning and machine learning modeling to solve complex environmental and civil engineering problems — from solid waste, wastewater to microplastic contamination.
     </p>
@@ -689,13 +703,13 @@
         <div class="skill-cell">
           <div class="skill-cell-label">Academic Profiles</div>
           <div class="skill-cell-value">
-            <a href="https://scholar.google.com/citations?hl=en&user=H1QbDGoAAAAJ" class="inline-link">Google Scholar</a> · <a href="https://www.researchgate.net/profile/Ajaya-Subedi-2?ev=hdr_xprf" class="inline-link">ResearchGate</a> · <a href="https://www.linkedin.com/in/ajaysubedi17/" class="inline-link">LinkedIn</a>
+            <a href="#" class="inline-link">Google Scholar</a> · <a href="#" class="inline-link">ResearchGate</a> · <a href="#" class="inline-link">LinkedIn</a>
           </div>
         </div>
         <div class="skill-cell">
           <div class="skill-cell-label">Social Media Profiles</div>
           <div class="skill-cell-value">
-            <a href="https://www.facebook.com/ItsAjaySubedi" class="inline-link">Facebook</a> · <a href="https://x.com/ItsAjaySubedi" class="inline-link">Twitter</a> · <a href="https://www.instagram.com/ajaysubedi17/" class="inline-link">Instagram</a>
+            <a href="#" class="inline-link">Facebook</a> · <a href="#" class="inline-link">Twitter</a> · <a href="#" class="inline-link">Instagram</a>
           </div>
         </div>
       </div>
@@ -713,7 +727,7 @@
 
     <div class="paper-item reveal">
       <div>
-        <div class="paper-title">Machine Learning-based Prediction of Global Solid Waste Generation and Composition <span class="paper-year-inline">(2026)</span></div>
+        <div class="paper-title">Machine Learning-based Prediction of Global Solid Waste Generation and Composition <span class="paper-year-inline">(2024)</span></div>
         <div class="paper-journal">Scientific Reports · <span class="quality">Q1</span></div>
       </div>
       <a href="https://doi.org/10.1038/s41598-026-56324-9" class="paper-link" target="_blank" rel="noopener">View Paper ↗</a>
@@ -721,7 +735,7 @@
 
     <div class="paper-item reveal">
       <div>
-        <div class="paper-title">Towards Scalability: Fe-MOF-based Ultrafiltration Membrane for Effective Microplastics Removal from Drinking Water at Point-of-Use <span class="paper-year-inline">(2026)</span></div>
+        <div class="paper-title">Towards Scalability: Fe-MOF-based Ultrafiltration Membrane for Effective Microplastics Removal from Drinking Water at Point-of-Use <span class="paper-year-inline">(2024)</span></div>
         <div class="paper-journal">Global Challenges · <span class="quality">Q1</span></div>
       </div>
       <a href="https://doi.org/10.1002/gch2.202500559" class="paper-link" target="_blank" rel="noopener">View Paper ↗</a>
@@ -729,7 +743,7 @@
 
     <div class="paper-item reveal">
       <div>
-        <div class="paper-title">Microplastic Contamination in the Pristine Waters of Tilicho Lake, Nepal: A Groundbreaking Study in the High-Altitude Himalayas <span class="paper-year-inline">(2026)</span></div>
+        <div class="paper-title">Microplastic Contamination in the Pristine Waters of Tilicho Lake, Nepal: A Groundbreaking Study in the High-Altitude Himalayas <span class="paper-year-inline">(2024)</span></div>
         <div class="paper-journal">iScience · <span class="quality">Q1</span></div>
       </div>
       <a href="https://doi.org/10.1016/j.isci.2025.114595" class="paper-link" target="_blank" rel="noopener">View Paper ↗</a>
@@ -737,7 +751,7 @@
 
     <div class="paper-item reveal">
       <div>
-        <div class="paper-title">Leveraging Machine Learning for Sustainable Solid Waste Management: A Global Perspective <span class="paper-year-inline">(2025)</span></div>
+        <div class="paper-title">Leveraging Machine Learning for Sustainable Solid Waste Management: A Global Perspective <span class="paper-year-inline">(2024)</span></div>
         <div class="paper-journal">Sustainable Futures · <span class="quality">Q1</span></div>
       </div>
       <a href="https://doi.org/10.1016/j.sftr.2025.101098" class="paper-link" target="_blank" rel="noopener">View Paper ↗</a>
@@ -745,7 +759,7 @@
 
     <div class="paper-item reveal">
       <div>
-        <div class="paper-title">Riverbed Sand and Gravel Mining in Nepal: Environmental Impacts and Policy Pathways <span class="paper-year-inline">(2026)</span></div>
+        <div class="paper-title">Riverbed Sand and Gravel Mining in Nepal: Environmental Impacts and Policy Pathways <span class="paper-year-inline">(2025)</span></div>
         <div class="paper-journal">Environmental Development · <span class="quality">Q1</span></div>
       </div>
       <span class="paper-link disabled">Under Review</span>
@@ -753,7 +767,7 @@
 
     <div class="paper-item reveal">
       <div>
-        <div class="paper-title">Application of Machine Learning for Prediction and Optimization of Biogas Production: A Mini Review <span class="paper-year-inline">(2026)</span></div>
+        <div class="paper-title">Application of Machine Learning for Prediction and Optimization of Biogas Production: A Mini Review <span class="paper-year-inline">(2025)</span></div>
         <div class="paper-journal">H2Open Journal · <span class="quality">Q2</span></div>
       </div>
       <a href="https://doi.org/10.1016/j.htopen.2026.100048" class="paper-link" target="_blank" rel="noopener">View Paper ↗</a>
@@ -772,7 +786,7 @@
         <div class="paper-title">Metal-Organic Framework-Infused Membrane for Microplastic Filtration: A Batch Study for Scalable Approach <span class="paper-year-inline">(2025)</span></div>
         <div class="paper-journal">ENG Transactions</div>
       </div>
-      <a href="https://www.researchgate.net/publication/389561171_Metal-Organic_Framework-Infused_Membrane_for_Microplastic_Filtration_A_Batch_Study_for_Scalable_Approach" class="paper-link">View Paper ↗</a>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -796,7 +810,7 @@
         <div class="paper-title">Compliance Status of Nepal National Building Code (NBC: 105) within Pokhara Metropolitan City <span class="paper-year-inline">(2025)</span></div>
         <div class="paper-journal">Pokhara Engineering College Journal (PECJ)</div>
       </div>
-      <a href="#" class="paper-link">View Paper ↗</a>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div> -->
 
   </div>
@@ -899,17 +913,17 @@
         <span class="contact-link-value">+977 984 670 2714</span>
         <span class="contact-link-arrow">↗</span>
       </a>
-      <a href="https://scholar.google.com/citations?hl=en&user=H1QbDGoAAAAJ" class="contact-link">
+      <a href="#" class="contact-link">
         <span class="contact-link-label">Google Scholar</span>
         <span class="contact-link-value">View Publications</span>
         <span class="contact-link-arrow">↗</span>
       </a>
-      <a href="https://www.researchgate.net/profile/Ajaya-Subedi-2?ev=hdr_xprf" class="contact-link">
+      <a href="#" class="contact-link">
         <span class="contact-link-label">ResearchGate</span>
         <span class="contact-link-value">View Profile</span>
         <span class="contact-link-arrow">↗</span>
       </a>
-      <a href="https://www.linkedin.com/in/ajaysubedi17/" class="contact-link">
+      <a href="#" class="contact-link">
         <span class="contact-link-label">LinkedIn</span>
         <span class="contact-link-value">Connect</span>
         <span class="contact-link-arrow">↗</span>
