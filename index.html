@@ -311,6 +311,10 @@
     line-height: 1.6;
   }
 
+  .skill-cell-value + .skill-cell-value {
+    margin-top: 0.3rem;
+  }
+
   /* ── RESEARCH ── */
   #research { background: var(--ink); color: #f7f5f0; }
 
@@ -325,7 +329,7 @@
 
   .paper-item {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto auto;
     gap: 2rem;
     align-items: start;
     padding: 2rem 0;
@@ -377,6 +381,26 @@
   .paper-badge.q1 {
     border-color: var(--accent);
     color: #7ab890;
+  }
+
+  .paper-link {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(247,245,240,0.45);
+    text-decoration: none;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(247,245,240,0.2);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .paper-link:hover {
+    color: #7ab890;
+    border-color: #7ab890;
   }
 
   /* ── TEACHING ── */
@@ -567,6 +591,8 @@
     #about .about-grid, #contact .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .teaching-grid { grid-template-columns: 1fr; }
     .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .paper-item { grid-template-columns: 1fr; gap: 0.6rem; }
+    .paper-year { order: -1; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 1.8rem; }
   }
 </style>
@@ -646,7 +672,7 @@
       <div class="skills-grid">
         <div class="skill-cell">
           <div class="skill-cell-label">Research Focus</div>
-          <div class="skill-cell-value">ML in Environmental Engineering, Solid Waste, Water Wystems, Wastewater, Microplastics</div>
+          <div class="skill-cell-value">ML in Environmental Engineering, Solid Waste, Water Systems, Wastewater, Microplastics</div>
         </div>
         <div class="skill-cell">
           <div class="skill-cell-label">Tools & Languages</div>
@@ -663,11 +689,11 @@
         </div>
         <div class="skill-cell">
           <div class="skill-cell-label">Academic Profiles</div>
-          <div class="skill-cell-value">Google Scholar  · ResearchGate · LinkedIn</div>
+          <div class="skill-cell-value">Google Scholar · ResearchGate · LinkedIn</div>
         </div>
         <div class="skill-cell">
           <div class="skill-cell-label">Social Media Profiles</div>
-          <div class="skill-cell-value">Facebook  · Twitter · Instagram</div>
+          <div class="skill-cell-value">Facebook · Twitter · Instagram</div>
         </div>
       </div>
     </div>
@@ -689,6 +715,7 @@
         <div class="paper-journal">Scientific Reports</div>
       </div>
       <div class="paper-badge q1">Q1 · Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -698,6 +725,7 @@
         <div class="paper-journal">Global Challenges</div>
       </div>
       <div class="paper-badge q1">Q1 · Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -707,6 +735,7 @@
         <div class="paper-journal">iScience</div>
       </div>
       <div class="paper-badge q1">Q1 · Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -716,6 +745,7 @@
         <div class="paper-journal">Sustainable Futures</div>
       </div>
       <div class="paper-badge q1">Q1 · Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -725,6 +755,7 @@
         <div class="paper-journal">Environmental Development</div>
       </div>
       <div class="paper-badge q1">Q1 · Under Review</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -733,7 +764,8 @@
         <div class="paper-title">Application of Machine Learning for Prediction and Optimization of Biogas Production: A Mini Review</div>
         <div class="paper-journal">H2Open Journal</div>
       </div>
-      <div class="paper-badge">Q2 . Submitted</div>
+      <div class="paper-badge">Q2 · Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -743,6 +775,7 @@
         <div class="paper-journal">International Journal of Environmental Studies (GENV)</div>
       </div>
       <div class="paper-badge">Q2 · Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -752,6 +785,7 @@
         <div class="paper-journal">ENG Transactions</div>
       </div>
       <div class="paper-badge">Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -761,6 +795,7 @@
         <div class="paper-journal">Natural Built Social Environment Health</div>
       </div>
       <div class="paper-badge">Published</div>
+      <a href="#" class="paper-link">Insert link here ↗</a>
     </div>
 
     <div class="paper-item reveal">
@@ -770,6 +805,7 @@
         <div class="paper-journal">Natural Built Social Environment Health</div>
       </div>
       <div class="paper-badge">Published</div>
+      <a href="https://nbseh.org/index.php/journals/article/view/29" class="paper-link" target="_blank" rel="noopener">View Paper ↗</a>
     </div>
 
     <!-- <div class="paper-item reveal">
@@ -795,7 +831,7 @@
       <div class="teaching-icon">⚗️</div>
       <div class="teaching-inst">IOE Pulchowk Campus · TU</div>
       <div class="teaching-role">Applied ML in Environmental Engineering</div>
-      <div class="teaching-desc">Teaching and Supervising Thesis work at M.Sc. level — bridging machine learning methodologies with real environmental engineering problems.</div>
+      <div class="teaching-desc">Teaching and supervising thesis work at M.Sc. level — bridging machine learning methodologies with real environmental engineering problems.</div>
     </div>
     <div class="teaching-card">
       <div class="teaching-icon">🌿</div>
@@ -805,7 +841,7 @@
     </div>
     <div class="teaching-card">
       <div class="teaching-icon">💧</div>
-      <div class="teaching-inst">NCIT · Universal Engineering College . Everest Engieering College </div>
+      <div class="teaching-inst">NCIT · Universal Engineering College · Everest Engineering College</div>
       <div class="teaching-role">Water Resources & Environmental Engineering</div>
       <div class="teaching-desc">Visiting faculty teaching water resources and environmental engineering subjects across multiple institutions in Lalitpur.</div>
     </div>
